@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: #050061;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5;
+  margin: 40px 0px 20px 0px;
+}
+
+input, select {
+  padding: 7px 15px;
+  border-radius: 20px;
+  border-color: transparent;
+  background-color: #edf0f4;
+  margin: 5px auto;
+}
+
+input {
+  width: 50%;
+}
+
+#pesquisa {
+  width: 30%;
+  margin-top: 20px;
+}
+
+select {
+  padding: 8px 20px;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.flex {
+  display: flex;
+  gap: 10;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+button {
+  padding: 7px 15px;
+  border: 2px solid #050061;
+  background-color: #050061;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px auto;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #050061;
+  font-weight: bold;
+}
+
+.btnRemover {
+  background-color: #fff;
+  color: #f00;
+  border: 2px solid #f00;
+}
+
+.btnRemover:hover {
+  background-color: #f00;
+  color: #fff;
+}
+
+#btnAdicionar {
+  width: fit-content;
+  margin: 10px auto;
+}
+
+ol {
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  list-style: none;
+  background: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 5px;
+  display: flex;       
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+li div {
+  display: flex;
+  gap: 6px;
+}
+
+.concluida {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+#contador, #alertaPendentes {
+  text-align: end;
+  font-weight: bold;
+}
