@@ -11,6 +11,7 @@ const selectCategoria = document.querySelector("#categoria") as HTMLSelectElemen
 
 const contador = document.querySelector("#contador") as HTMLParagraphElement;
 const alertaPendentes = document.querySelector("#alertaPendentes") as HTMLParagraphElement;
+const msgAlerta = document.querySelector("#msgAlerta") as HTMLParagraphElement;
 
 
 type Categoria = 'Trabalho' | 'Pessoal' | 'Estudo';
@@ -59,13 +60,22 @@ listaTarefas = [
 function adicionarTarefa() {
   const inputValue = input.value.trim();
   const categoriaSelecionada = selectCategoria.value as Categoria;
-  if (inputValue === "") return;
+  if (inputValue === "") {
+    msgAlerta.textContent = "[ATENÇÃO] Preencha a tarefa";
+    return;
+  }
+
+  if (inputValue.length < 3) {
+    msgAlerta.textContent = "[ATENÇÃO] Mínimo de 3 caracteres";
+    return;
+  }
 
   const novaTarefa = new TarefaClass(Date.now(), inputValue, categoriaSelecionada);
   listaTarefas.push(novaTarefa);
 
   input.value = "";
-  inputPesquisa.value = ""
+  inputPesquisa.value = "";
+  msgAlerta.textContent = "";
   renderizarListaFiltrada(inputPesquisa.value);
 }
 

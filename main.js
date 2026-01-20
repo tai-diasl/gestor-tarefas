@@ -8,6 +8,7 @@ const btnLimpar = document.querySelector("#btnLimpar");
 const selectCategoria = document.querySelector("#categoria");
 const contador = document.querySelector("#contador");
 const alertaPendentes = document.querySelector("#alertaPendentes");
+const msgAlerta = document.querySelector("#msgAlerta");
 class TarefaClass {
     constructor(id, titulo, categoria) {
         this.id = id;
@@ -28,12 +29,19 @@ listaTarefas = [
 function adicionarTarefa() {
     const inputValue = input.value.trim();
     const categoriaSelecionada = selectCategoria.value;
-    if (inputValue === "")
+    if (inputValue === "") {
+        msgAlerta.textContent = "[ATENÇÃO] Preencha a tarefa";
         return;
+    }
+    if (inputValue.length < 3) {
+        msgAlerta.textContent = "[ATENÇÃO] Mínimo de 3 caracteres";
+        return;
+    }
     const novaTarefa = new TarefaClass(Date.now(), inputValue, categoriaSelecionada);
     listaTarefas.push(novaTarefa);
     input.value = "";
     inputPesquisa.value = "";
+    msgAlerta.textContent = "";
     renderizarListaFiltrada(inputPesquisa.value);
 }
 function remover(id) {

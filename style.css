@@ -116,3 +116,14 @@ li div {
   text-align: end;
   font-weight: bold;
 }
+
+#msgAlerta:empty {
+  display: none;
+}
+
+#msgAlerta {
+  display: block;
+  color: #f00;
+  text-align: center;
+  margin: 10px;
+}
